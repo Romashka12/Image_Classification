@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }}</title>
+      {% else %}
+      <title>Image classification app</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Image classifier app: <a href="/start_page">Home</a> <a href="/image_classifier">Image classifier</a> </div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

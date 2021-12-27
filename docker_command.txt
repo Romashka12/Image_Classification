@@ -1,0 +1,2 @@
+docker build -t image_class_app .
+docker run  --publish 5000:5000 --name=flask  image_class_app

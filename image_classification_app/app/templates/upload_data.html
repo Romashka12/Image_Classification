@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<html>
+<body>
+    
+    <h1> Image upload </h1>
+    {% if file %}
+        <p> Provided image name {{  image_name }} </p>
+    {% endif %}
+
+    <form method="POST" action="" enctype="multipart/form-data">
+        <p> <input type="file" name="file"> </p>
+        <p> <input type="submit" value="Submit"></p>
+    </form>
+    {% if file %}
+    <div>
+        <img src="{{ url_for('upload', filename=file) }}" style="width: 256px">
+    </div>
+    {% endif %}
+    
+    {% if image_labels %}
+        {% for key, value in image_labels.items()  %}
+            <p> Category {{key}} has probability of {{value}} </p>
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>
+{% endblock %}
